@@ -11,7 +11,7 @@
 
         <footer class="flex justify-between items-center">
             <img
-                src="{{ auth()->user()->getAvatarUrl() }}"
+                src="{{ auth()->user()->avatar }}"
                 alt="{{ auth()->user()->name }}"
                 class="rounded-full mr-2"
                 max-height="40"

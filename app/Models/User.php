@@ -59,7 +59,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function getAvatarUrl() {
+    public function getAvatarAttribute() {
         return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=40&d=monsterid';
     }
 
