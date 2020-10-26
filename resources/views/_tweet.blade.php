@@ -1,8 +1,8 @@
 <div class="flex p-4 border-b border-gray-400">
     <div class="mr-2 flex-shrink-0">
         <img
-            src="https://www.gravatar.com/avatar/{{ md5($tweet->user->email) }}?s=50&d=monsterid"
-            alt=""
+            src="{{ $tweet->user->avatar }}"
+            alt="{{ $tweet->user->name }}"
             class="rounded-full mr-2"
         >
     </div>
