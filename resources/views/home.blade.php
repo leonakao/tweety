@@ -10,7 +10,7 @@
             @include('_publish-tweet-panel')
 
             <div class="border border-gray-300 rounded-lg">
-                @foreach(range(1, 5) as $index)
+                @foreach($tweets as $tweet)
                     @include('_tweet')
                 @endforeach
             </div>
