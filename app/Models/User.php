@@ -59,7 +59,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function getAvatarUrl() {
+        return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=40&d=monsterid';
+    }
+
     public function timeline() {
-        return Tweet::latest()->get();
+        return Tweet::where('user_id', $this->id)->get();
     }
 }
