@@ -8,10 +8,6 @@ use App\Models\Tweet;
 
 class TweetsController extends Controller
 {
-    public function __construct() {
-        $this->middleware('auth');
-    }
-
     public function index() {
         return view('tweets.index', [
             'tweets' => auth()->user()->timeline()
