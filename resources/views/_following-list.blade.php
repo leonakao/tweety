@@ -8,14 +8,14 @@
                     href="{{ route('profile', $user) }}"
                     class="flex items-center"
                 >
-                        <img
-                            src="{{ $user->avatar }}"
-                            alt="{{ $user->name }}"
-                            class="rounded-full mr-2"
-                            width="40"
-                        >
+                    <img
+                        src="{{ $user->avatar }}"
+                        alt="{{ $user->name }}"
+                        class="rounded-full mr-2"
+                        width="40"
+                    >
 
-                        {{ $user->name }}
+                    {{ $user->name }}
                 </a>
             </div>
         </li>
