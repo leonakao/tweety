@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::post('/tweets', 'TweetsController@store')->name('TweetsStore');
+Route::get('/tweets', 'TweetsController@index')->name('home');
+Route::post('/tweets', 'TweetsController@store')->name('tweets_store');

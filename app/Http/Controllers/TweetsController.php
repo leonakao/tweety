@@ -8,6 +8,16 @@ use App\Models\Tweet;
 
 class TweetsController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
+    public function index() {
+        return view('home', [
+            'tweets' => auth()->user()->timeline()
+         ]);
+    }
+
     public function store(Request $request) {
         $attr = $request->validate(['body' => 'required|max:255']);
 
