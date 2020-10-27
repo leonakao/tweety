@@ -26,6 +26,6 @@ class TweetsController extends Controller
             'body' => $attr['body'],
         ]);
 
-        return redirect('/home');
+        return redirect('/tweets');
     }
 }
