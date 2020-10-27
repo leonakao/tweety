@@ -60,7 +60,7 @@ class User extends Authenticatable
     ];
 
     public function getAvatarAttribute() {
-        return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=40&d=monsterid';
+        return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=200&d=monsterid';
     }
 
     public function timeline() {

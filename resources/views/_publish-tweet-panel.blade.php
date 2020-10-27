@@ -1,4 +1,4 @@
-<div class="border border-blue-400 rounded-lg py-6 px-8 mb-8">
+<div class="border border-blue-400 rounded-2xl py-6 px-8 mb-8">
     <form method="POST" action="/tweets">
         @csrf
 
@@ -20,12 +20,13 @@
                 src="{{ auth()->user()->avatar }}"
                 alt="{{ auth()->user()->name }}"
                 class="rounded-full mr-2"
-                max-height="40"
+                width="40"
+                height="40"
             >
 
             <button
                 type="submit"
-                class="bg-blue-500 rounded-lg shadow py-4 px-2 text-white"
+                class="bg-blue-500 rounded-2xl shadow py-4 px-2 text-white"
             >
                 Tweet-a-roo!
             </button>
