@@ -1,42 +1,38 @@
-<x-jet-authentication-card>
-    <x-slot name="logo">
-        <x-jet-authentication-card-logo />
-    </x-slot>
+@extends('layouts.app')
 
-    <x-jet-validation-errors class="mb-4" />
-
+@section('content')
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
         <div>
-            <x-jet-label for="name" value="{{ __('Name') }}" />
-            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <label for="name" value="Name"> Name </label>
+            <input id="name" class="border-b border-black-500 block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
         </div>
 
         <div class="mt-4">
-            <x-jet-label for="email" value="{{ __('Email') }}" />
-            <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            <label for="email" value="Email"> Email </label>
+            <input id="email" class="border-b border-black-500 block mt-1 w-full" type="email" name="email" :value="old('email')" required />
         </div>
 
         <div class="mt-4">
-            <x-jet-label for="password" value="{{ __('Password') }}" />
-            <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+            <label for="password" value="Password"> Password </label>
+            <input id="password" class="border-b border-black-500 block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
         </div>
 
         <div class="mt-4">
-            <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-            <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+            <label for="password_confirmation" value="Confirm Password"> Confirm Password </label>
+            <input id="password_confirmation" class="border-b border-black-500 block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
+                Already registered?
             </a>
 
-            <x-jet-button class="ml-4">
-                {{ __('Register') }}
-            </x-jet-button>
+            <button type="submit" class="ml-4">
+                Register
+            </button>
         </div>
     </form>
-</x-jet-authentication-card>
+@endsection
 
