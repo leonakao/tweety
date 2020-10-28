@@ -6,11 +6,19 @@ use App\Models\User;
 
 trait Followable {
     public function follow(User $user) {
-        return $this->follows()->save($user);
+        if(!$this->isFollowing($user)) {
+            return $this->follows()->save($user);
+        }
+    }
+
+    public function unFollow(User $user) {
+        if($this->isFollowing($user)) {
+            return $this->follows()->detach($user);
+        }
     }
 
     public function isFollowing(User $user) {
-        return in_array($user, $this->follows);
+        return $this->follows()->where('following_user_id', $user->id)->exists();
     }
 
     public function follows() {
