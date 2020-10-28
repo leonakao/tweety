@@ -14,11 +14,17 @@
                             <div>
                                 <label for="email" value="Email"> Email </label>
                                 <input id="email" class="border-b border-black-500 block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                                @error('email')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="mt-4">
                                 <label for="password" value="Password"> Password </label>
                                 <input id="password" class="border-b border-black-500 block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                                @error('password')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="block mt-4">
@@ -26,6 +32,9 @@
                                     <input id="remember_me" type="checkbox" class="form-checkbox" name="remember">
                                     <span class="ml-2 text-sm text-gray-600">Remember me</span>
                                 </label>
+                                @error('remember')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="flex items-center justify-end mt-4">

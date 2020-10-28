@@ -14,26 +14,41 @@
                             <div>
                                 <label for="username" value="Username"> Username </label>
                                 <input id="username" class="border-b border-black-500 block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
+                                @error('username')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div>
                                 <label for="name" value="Name"> Name </label>
                                 <input id="name" class="border-b border-black-500 block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                                @error('name')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="mt-4">
                                 <label for="email" value="Email"> Email </label>
                                 <input id="email" class="border-b border-black-500 block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                                @error('email')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="mt-4">
                                 <label for="password" value="Password"> Password </label>
                                 <input id="password" class="border-b border-black-500 block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                                @error('password')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="mt-4">
                                 <label for="password_confirmation" value="Confirm Password"> Confirm Password </label>
                                 <input id="password_confirmation" class="border-b border-black-500 block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                                @error('password_confirmation')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
