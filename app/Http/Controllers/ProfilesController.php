@@ -13,6 +13,10 @@ class ProfilesController extends Controller
     }
 
     public function edit(User $user) {
+        if(current_user()->isNot($user)){
+            abort(404);
+        }
+
         return view('profiles.edit', compact('user'));
     }
 }
