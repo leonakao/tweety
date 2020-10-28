@@ -26,4 +26,6 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/profiles/{user:username}/follow', 'FollowsController@store')->name('follows.store');
     Route::delete('/profiles/{user:username}/follow', 'FollowsController@destroy')->name('follows.destroy');
+
+    Route::patch('/profiles/{user:username}', 'ProfilesController@update')->name('profiles.update');
 });

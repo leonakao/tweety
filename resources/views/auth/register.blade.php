@@ -21,7 +21,7 @@
 
                             <div>
                                 <label for="name" value="Name"> Name </label>
-                                <input id="name" class="border-b border-black-500 block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                                <input id="name" class="border-b border-black-500 block mt-1 w-full" type="text" name="name" :value="old('name')" required autocomplete="name" />
                                 @error('name')
                                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                                 @enderror
