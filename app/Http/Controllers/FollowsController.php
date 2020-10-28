@@ -14,4 +14,12 @@ class FollowsController extends Controller
 
         return back();
     }
+
+    public function destroy(User $user) {
+        auth()
+            ->user()
+            ->unFollow($user);
+
+        return back();
+    }
 }
