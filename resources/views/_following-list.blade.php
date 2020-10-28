@@ -10,7 +10,7 @@
                 >
                     <img
                         src="{{ $user->avatar }}"
-                        alt="{{ $user->name }}"
+                        alt="{{ $user->username }}"
                         class="rounded-full mr-2"
                         width="40"
                         height="40"

@@ -18,7 +18,7 @@
         <footer class="flex justify-between items-center">
             <img
                 src="{{ current_user()->avatar }}"
-                alt="{{ current_user()->name }}"
+                alt="{{ current_user()->username }}"
                 class="rounded-full mr-2"
                 width="40"
                 height="40"

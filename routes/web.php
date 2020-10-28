@@ -21,9 +21,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/tweets', 'TweetsController@index')->name('home');
     Route::post('/tweets', 'TweetsController@store')->name('tweets.store');
 
-    Route::get('/profiles/{user:name}', 'ProfilesController@show')->name('profile');
-    Route::get('/profiles/{user:name}/edit', 'ProfilesController@edit')->name('profiles.edit')->middleware('can:edit,user');
+    Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');
+    Route::get('/profiles/{user:username}/edit', 'ProfilesController@edit')->name('profiles.edit')->middleware('can:edit,user');
 
-    Route::post('/profiles/{user:name}/follow', 'FollowsController@store')->name('follows.store');
-    Route::delete('/profiles/{user:name}/follow', 'FollowsController@destroy')->name('follows.destroy');
+    Route::post('/profiles/{user:username}/follow', 'FollowsController@store')->name('follows.store');
+    Route::delete('/profiles/{user:username}/follow', 'FollowsController@destroy')->name('follows.destroy');
 });

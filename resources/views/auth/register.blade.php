@@ -12,6 +12,11 @@
                             @csrf
 
                             <div>
+                                <label for="username" value="Username"> Username </label>
+                                <input id="username" class="border-b border-black-500 block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
+                            </div>
+
+                            <div>
                                 <label for="name" value="Name"> Name </label>
                                 <input id="name" class="border-b border-black-500 block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                             </div>
