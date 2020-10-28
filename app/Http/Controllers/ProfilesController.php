@@ -21,9 +21,12 @@ class ProfilesController extends Controller
     public function update(User $user) {
         $attrs = request()->validate([
             'username' => ['required', 'string', 'max:255', 'alpha_dash', Rule::unique('users')->ignore($user)],
+            'avatar' => ['required', 'file'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user)],
         ]);
+
+        $attrs['avatar'] = request('avatar')->store('avatars');
 
         $user->update($attrs);
 

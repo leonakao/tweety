@@ -27,6 +27,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'username',
+        'avatar',
         'name',
         'email',
         'password',
@@ -62,8 +63,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function getAvatarAttribute() {
-        return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=200&d=monsterid';
+    public function getAvatarAttribute($value) {
+        return $value ? asset("storage/{$value}") : 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=200&d=monsterid';
     }
 
     public function timeline() {
