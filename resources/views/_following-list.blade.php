@@ -1,7 +1,7 @@
 <h3 class="font-bold text-xl mb-4">Following</h3>
 
 <ul>
-    @foreach(current_user()->follows as $user)
+    @forelse(current_user()->follows as $user)
         <li class="mb-4">
             <div class="text-sm">
                 <a
@@ -20,5 +20,9 @@
                 </a>
             </div>
         </li>
-    @endforeach
+    @empty
+        <li>
+            No following yet
+        </li>
+    @endforelse
 </ul>
