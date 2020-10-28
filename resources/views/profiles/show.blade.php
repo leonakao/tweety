@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="flex">
-                    <a href="" class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
+                    <x-edit-profile-button :user="$user" />
 
                     <x-follow-button :user="$user" />
                 </div>
