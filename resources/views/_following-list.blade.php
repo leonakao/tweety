@@ -5,7 +5,7 @@
         <li class="mb-4">
             <div class="text-sm">
                 <a
-                    href="{{ $user->profilePath() }}"
+                    href="{{ $user->path() }}"
                     class="flex items-center"
                 >
                     <img
