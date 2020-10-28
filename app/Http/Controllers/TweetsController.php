@@ -10,7 +10,7 @@ class TweetsController extends Controller
 {
     public function index() {
         return view('tweets.index', [
-            'tweets' => auth()->user()->timeline()
+            'tweets' => current_user()->timeline()
          ]);
     }
 
@@ -18,7 +18,7 @@ class TweetsController extends Controller
         $attr = $request->validate(['body' => 'required|max:255']);
 
         Tweet::create([
-            'user_id' => auth()->user()->id,
+            'user_id' => current_user()->id,
             'body' => $attr['body'],
         ]);
 
