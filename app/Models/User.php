@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Traits\Followable;
 
 class User extends Authenticatable
 {
@@ -17,6 +18,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use Followable;
 
     /**
      * The attributes that are mass assignable.
@@ -74,14 +76,6 @@ class User extends Authenticatable
 
     public function tweets() {
         return $this->hasMany(Tweet::class);
-    }
-
-    public function follow(User $user) {
-        return $this->follows()->save($user);
-    }
-
-    public function follows() {
-        return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
     }
 
     public function getRouteKeyName() {
