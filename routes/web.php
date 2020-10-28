@@ -23,9 +23,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');
     Route::get('/profiles/{user:username}/edit', 'ProfilesController@edit')->name('profiles.edit')->middleware('can:edit,user');
+    Route::patch('/profiles/{user:username}', 'ProfilesController@update')->name('profiles.update')->middleware('can:edit,user');
 
     Route::post('/profiles/{user:username}/follow', 'FollowsController@store')->name('follows.store');
     Route::delete('/profiles/{user:username}/follow', 'FollowsController@destroy')->name('follows.destroy');
 
-    Route::patch('/profiles/{user:username}', 'ProfilesController@update')->name('profiles.update')->middleware('can:edit,user');
+    Route::get('/explore', 'ExploreController@index')->name('explore.index');
 });
