@@ -1,11 +1,21 @@
 <x-app>
     <div>
         <header class="mb-6 relative">
-            <img
-                src="/images/default-profile-banner.jpg"
-                alt=""
-                class="mb-2"
-            >
+            <div class="relative">
+                <img
+                    src="/images/default-profile-banner.jpg"
+                    alt=""
+                    class="mb-2"
+                >
+
+                <img
+                    src="{{ $user->avatar }}"
+                    alt="{{ $user->name }}"
+                    class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
+                    style="left: 50%"
+                    width="150"
+                >
+            </div>
 
             <div class="flex justify-between items-center mb-6">
                 <div>
@@ -19,13 +29,6 @@
                     <x-follow-button :user="$user" />
                 </div>
             </div>
-
-            <img
-                src="{{ $user->avatar }}"
-                alt="{{ $user->name }}"
-                class="rounded-full mr-2 absolute"
-                style="width: 150px; left: calc(50% - 75px); top: 35%"
-            >
 
             <p class="text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sunt illo eligendi reiciendis placeat facere, odio minus? Assumenda, quae! Est optio, voluptatibus fuga quasi ducimus eaque! Ipsa iusto natus pariatur.
