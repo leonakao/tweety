@@ -33,8 +33,6 @@
                     type="file"
                     name="avatar"
                     value="{{ $user->avatar }}"
-                    required
-                    autofocus
                     autocomplete="avatar"
                 />
 
