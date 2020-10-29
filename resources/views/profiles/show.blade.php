@@ -41,7 +41,7 @@
         </header>
 
         @include('_timeline', [
-            'tweets' => $user->tweets
+            'tweets' => $tweets
         ])
     </div>
 </x-app>
