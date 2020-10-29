@@ -5,17 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Traits\Likeable;
-
-class Tweet extends Model
+class Like extends Model
 {
     use HasFactory;
 
-    use Likeable;
-
     protected $guarded = [];
-
-    public function user() {
-        return $this->belongsTo(User::class);
-    }
 }
