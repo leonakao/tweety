@@ -1,7 +1,8 @@
 @unless (current_user()->is($user))
 
-    <form method="POST" action="/profiles/{{ $user->name }}/follow">
+    <form method="POST" action="{{ route('follows.store', $user) }}">
         @csrf
+
         @method(current_user()->isFollowing($user) ? 'DELETE' : 'POST')
 
         <button
