@@ -6,7 +6,18 @@ use App\Models\User;
 use App\Models\Tweet;
 use App\Models\Like;
 
+use Illuminate\Database\Eloquent\Builder;
+
 trait Likeable {
+    public function scopeWithLikes(Builder $query) {
+        $query->leftJoinSub(
+            'select tweet_id, sum(liked) totalLikes, sum(!liked) dislikes from likes group by tweet_id',
+            'likes',
+            'likes.tweet_id',
+            'tweets.id'
+        );
+    }
+
     public function like($user, $liked = true) {
         return $this->likes()->updateOrCreate([
             'user_id' => $user ? $user->id : auth()->id(),
