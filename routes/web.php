@@ -29,4 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profiles/{user:username}/follow', 'FollowsController@destroy')->name('follows.destroy');
 
     Route::get('/explore', 'ExploreController')->name('explore');
+
+    Route::post('/tweets/{tweet}/like', 'TweetsLikeController@store')->name('like');
+    Route::delete('/tweets/{tweet}/dislike', 'TweetsLikeController@destroy')->name('dislike');
 });
