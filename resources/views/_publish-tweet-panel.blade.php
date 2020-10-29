@@ -26,9 +26,9 @@
 
             <button
                 type="submit"
-                class="bg-blue-500 rounded-2xl shadow py-4 px-2 text-white"
+                class="bg-blue-300 hover:bg-blue-500 rounded-2xl shadow py-2 px-10 text-sm text-white"
             >
-                Tweet-a-roo!
+                Publish
             </button>
         </footer>
     </form>
