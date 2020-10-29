@@ -78,9 +78,10 @@
         </div>
 
         <div class="mt-4">
-            <button type="submit" class="px-5 py-3 rounded text-sm uppercase bg-blue-600 text-white">
+            <button type="submit" class="px-5 py-2 rounded text-sm uppercase bg-blue-600 text-white mr-2">
                 Save
             </button>
+            <a href="{{ $user->path() }}" class="hover:underline">Cancel</a>
         </div>
     </form>
 </x-app>

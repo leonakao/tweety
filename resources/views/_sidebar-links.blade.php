@@ -35,8 +35,12 @@
         </a>
     </li>
     <li>
-        <a href="/more" class="font-bold text-lg mb-4 block">
-            More
-        </a>
+        <form method="POST"action="{{ route('logout') }}">
+            @csrf
+
+            <button type="submit" class="font-bold text-lg mb-4 block">
+                Logout
+            </button>
+        </form>
     </li>
 </ul>
